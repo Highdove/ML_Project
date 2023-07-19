@@ -12,10 +12,10 @@ class PredictPipeline:
         try:
             model_path="artifacts/model.pkl"
             preprocessor_path='artifacts/proprocessor.pkl'
-           # print("Before Loading")
+            #print("Before Loading")
             model=load_object(file_path=model_path)
             preprocessor=load_object(file_path=preprocessor_path)
-           # print("After Loading")
+            #print("After Loading")
             data_scaled=preprocessor.transform(features)
             preds=model.predict(data_scaled)
             return preds
